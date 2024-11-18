@@ -1,3 +1,3 @@
 # Wonderlust
-# Explore-hotels
-# Explore-hotels
+# basicaly this site is for exploring the hotels and restaurants.
+
