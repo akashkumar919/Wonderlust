@@ -72,12 +72,12 @@ body{
 }
 .card{
     margin-bottom:0.5rem;
-    padding:0;
-    
+    padding:0;  
 }
-/* .listing-link{
-    text-decoration: none;
-} */
+.card:hover{
+    cursor: pointer;   
+}
+
 
 .card-img-top{
     object-fit: cover !important;
@@ -86,6 +86,7 @@ body{
 }
 .card-img-top:hover{
     opacity: 0.8;
+    
 }
 
 .card-body {

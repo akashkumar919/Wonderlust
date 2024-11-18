@@ -1,8 +1,12 @@
 <% layout("/layouts/boilerplate") %>
 <body>
     
-    <h3 class="offset-2">The information about : <%=listing.title%></h3>
-    <div class="card offset-2" style="width: 35rem;">
+  <div class="row row-cols-lg-1">
+    
+    <h3 class="row">The information about : <%=listing.title%></h3>
+
+   
+    <div class="card" style="width: 35rem;">
         <img src="<%=listing.image %>" class="card-img-top" alt="listing-image">
         <div class="card-body">
           <p class="card-text"><b><%=listing.title%></b>
@@ -31,5 +35,6 @@
 
     
     
+  </div>
     
 </body>
