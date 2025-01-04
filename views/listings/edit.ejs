@@ -1,48 +1,83 @@
 <% layout("/layouts/boilerplate") %>
-<body>
-    <div class="row">
-        <div class="col offset-1">
+
+
+  
+
+  
+    <div class="row ">
+        <div class="col-6" style="width:30rem;height:auto;"  >
             <br>
-    <h3>Edit this listing : <%=listing.title%></h3>
-    <form method="post" action="/listings/<%=listing._id %>?_method=put">
+    <h3 class="row ms-auto">Edit this listing : <%=listing.title%></h3>
+    <form method="post" action="/listings/<%=listing._id %>?_method=put" class="needs-validation" enctype="multipart/form-data" novalidate>
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" name="listing[title]" value="<%=listing.title %>" class="form-control">
+            <input type="text" name="listing[title]" value="<%=listing.title %>" class="form-control" required>
+            <div class="valid-feedback">
+                Title looks good!
+              </div>
+            <div class="invalid-feedback">
+                Please enter valid title!
+              </div>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea type="text" name="listing[description]" class="form-control" ><%=listing.description %></textarea>
+            <textarea type="text" name="listing[description]" class="form-control" required><%=listing.description %></textarea>
+            <div class="valid-feedback">
+                Description looks good!
+              </div>
+            <div class="invalid-feedback">
+                Please enter valid description!
+              </div>
         </div>
         <div class="mb-3">
-            <label for="image" class="form-label">Image</label>
-            <input rows="3" cols="30" type="text" name="listing[image]" value="<%=listing.image %>" class="form-control">
-
+          <h6>Origial Image</h6>
+         <img src="<%=originalImageUrl %>" alt="listing-imgs">
+      </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload New Image</label>
+            <input rows="3" cols="30" type="file" name="listing[image]" value="<%=listing.image.url %>" class="form-control" >
+            
         </div>
         <div class="row">
             <div class="mb-3 col-md-4">
                 <label for="price" class="form-label">Price</label>
-                <input type="number" name="listing[price]" value="<%=listing.price%>" class="form-control">
-    
+                <input type="number" name="listing[price]" value="<%=listing.price%>" class="form-control" required>
+                <div class="valid-feedback">
+                    Price looks good!
+                  </div>
+                <div class="invalid-feedback">
+                    Please enter valid price!
+                  </div>
             </div>
             <div class="mb-3 col-md-8">
                 <label for="location" class="form-label">Location</label>
-                <input type="text" name="listing[location]" value="<%=listing.location %>" class="form-control" >
-    
+                <input type="text" name="listing[location]" value="<%=listing.location %>" class="form-control" required>
+                <div class="valid-feedback">
+                    Location looks good!
+                  </div>
+                <div class="invalid-feedback">
+                    Please enter valid location!
+                  </div>
             </div>
         </div>
        
         <div class="mb-3">
             <label for="country" class="form-label">Country</label>
-            <input type="text" name="listing[country]" value="<%=listing.country %>" class="form-control">
-
+            <input type="text" name="listing[country]" value="<%=listing.country %>" class="form-control" required>
+            <div class="valid-feedback">
+                Country looks good!
+              </div>
+            <div class="invalid-feedback">
+                Please enter valid country!
+              </div>
         </div>
     
-        <button class="btn btn-danger">Submit</button>
+        <button class="btn btn-danger edit-listing-btn">Submit</button>
         <br><br>
     </form>
 </div>
 </div>
    
         
-    
-</body>
+
+

@@ -1,27 +1,51 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+
+}
+
 body{
     font-family: "Plus Jakarta Sans", sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
 }
 .navbar{
     height:auto;
+    width:100vw;
     background-color: white;
 }
-.fa-compass{
+.fa-airbnb, .nav-brand{
     color:#fe424d;
     font-size: 2rem;
+    font-weight: 900;
+}
+
+.navbar-brand{
+    color:#fe424d !important;
+    font-size: 1.4rem;
+    font-weight: 700;
+    
+}
+.navbar-brand-name{
+    padding-bottom: 1rem;
 }
 .nav-link{
     color:#222222 !important;
-    font-weight: 450;
+    font-weight: 550;
 }
-.container{
+.container-fluid{
     flex:1;
+    height:auto;
 }
 
 
 /* for footer  */
+
+
+
 .f-info-links a{
     text-decoration: none;
     color:#222222;
@@ -33,7 +57,7 @@ body{
 
 .f-info{
     height:5rem;
-    width:100%;
+    width:100vw;
     color:#222222;
     background-color:rgb(225, 222, 222);
     display:flex;
@@ -71,9 +95,13 @@ body{
 
 }
 .card{
-    margin-bottom:0.5rem;
-    padding:0;  
+    border:none;
+    height:auto;
+    width: 15rem;
+    padding:0px;    
+    
 }
+
 .card:hover{
     cursor: pointer;   
 }
@@ -81,11 +109,12 @@ body{
 
 .card-img-top{
     object-fit: cover !important;
-    border-radius: 0.3rem;
+    border-radius: 0.8rem;
     width:100% !important;
+    height:14rem;
 }
 .card-img-top:hover{
-    opacity: 0.8;
+    opacity: 0.9;
     
 }
 
@@ -98,9 +127,176 @@ body{
 }
 
 /* show route */
+
 .btns{
     width:12rem;
     padding:0;
     display: flex;
     justify-content: space-evenly;
 }
+
+/* for comments  */
+.username{
+    display: flex;
+}
+
+.fa-user-circle{
+    margin-right: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.review-btn{
+    margin-left: 0.6rem;
+   
+}
+
+/* comment */
+
+.fa-arrow-circle-up{
+    font-size: 1.5rem;
+   padding:0;
+}
+
+.comment{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.comment-card{
+    width:20rem;
+    height:auto;
+}
+
+.sign-up-page{
+    height:auto;
+    width:20rem;
+    padding:1rem;
+    border-radius: 1rem;
+    box-shadow:1px 1px 15px #000000;
+}
+
+
+/* styling for navbar-icons */
+.icon-nav{
+    display: flex;
+}
+#filters{
+    overflow: scroll;
+    padding: 0rem 1.4rem 0rem 1.4rem;
+    display: flex;
+    flex-direction: row;
+    width:75%;
+
+}
+#filters::-webkit-scrollbar { 
+    display: none;
+    -ms-overflow-style: none;
+     scrollbar-width: none;
+ }
+.filter{
+    margin-top: 1rem;
+    margin-right: 2rem;
+    text-align: center;
+    opacity: 0.7;
+}
+.filter:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.filter:active{
+    opacity: 1;
+}
+
+
+.filter i{
+    font-size: 1.5rem;
+}
+.filter p{
+    font-size: 0.6rem;
+    font-weight: bold;
+    
+}
+.tax-toggle{
+
+    height:2.5rem;
+    padding:1rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    border:1px solid grey;
+}
+
+@media(max-width:1025px){
+    .icon-nav{
+       
+        flex-direction: column;
+    }
+    #filters{
+        width:100%;
+        
+    }
+    .tax-toggle{
+        margin-bottom: 1rem;
+        margin-left: 0px;
+        margin-top:0px;
+    }
+    
+}
+
+.tax-info{
+    display: inline;
+}
+
+/* This styling for search icon */
+.magnifying-glass{
+    height:38px;
+    margin-left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    background-color: #fe424d;
+    color:white;
+    }
+    .magnifying-glass:hover{
+      background-color: #fe424d;
+      color:white;
+  
+      }
+   
+    .search-input{
+      height:38px;
+      font-size: 1rem;
+      padding:0rem 2rem 0rem 3rem;
+      border-radius: 25px;
+    }
+
+
+    /* login signup page style  */
+    .login-signup-btn{
+        width:100%;
+
+    }
+    .signup-link p{
+        margin-left: 1.5rem;
+    }
+    .signup-link p b a{
+        text-decoration: none;
+    }
+    p b a{
+        
+        text-decoration: none;
+
+    }
+
+    .edit-listing-btn{
+        width:100%;
+    }
+
+    .new-listing-btn{
+        width:100%;
+    }
+    /* style="width:45rem;height:auto;"  */

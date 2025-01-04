@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const Review = require("./review.js");
+
 
 const listingSchema = new mongoose.Schema({
     title:{
@@ -9,9 +11,8 @@ const listingSchema = new mongoose.Schema({
         type : String,
     },
     image :{
-        type :String,
-        default:"https://unsplash.com/photos/two-brown-deer-beside-trees-and-mountain-UCd78vfC8vU",
-        set: (url) => typeof url === "object" ? url.url : url === "" ? "https://unsplash.com/photos/two-brown-deer-beside-trees-and-mountain-UCd78vfC8vU" : url,
+       url: String,
+       filename: String,
     },
     price: {
         type : Number,
@@ -23,6 +24,26 @@ const listingSchema = new mongoose.Schema({
     country : {
         type : String,
         require : true,
+    },
+    reviews:[
+        {
+           type:mongoose.Schema.Types.ObjectId,
+           ref:"Review",
+    },
+    ],
+    owner:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User",
+    },
+
+});
+
+
+
+// for deleting the all reviews asociated with the listing
+listingSchema.post("findOneAndDelete",async(listing)=>{
+    if(listing){
+        await Review.deleteMany({_id:{$in:listing.reviews}})
     }
 });
 

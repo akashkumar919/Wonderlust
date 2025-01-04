@@ -1,46 +1,83 @@
 <% layout("/layouts/boilerplate") %>
-<body>
-    <div class="row">
-        <div class="col-8 offset-0">
+
+
+   
+    <div class="row row-cols-lg-1 row-cols-sm-1 ">
+        <div class="col-6" style="width:30rem;height:auto;"  >
             <br>
-            <h3>Create new listings</h3>
-    <form method="POST" action="/listings">
+            <h3 class="row ms-auto">Create new listings</h3>
+    <form method="POST" action="/listings" class="needs-validation" enctype="multipart/form-data" novalidate>
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" name="listing[title]" placeholder="enter title" class="form-control">
+            <input type="text" name="listing[title]" placeholder="enter title" class="form-control" required>
+            <div class="valid-feedback">
+               Title looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please enter valid title!
+            </div>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea type="text" name="listing[description]" placeholder="enter description" class="form-control"></textarea>
-            
+            <textarea type="text" name="listing[description]" placeholder="enter description" class="form-control" required></textarea>
+            <div class="invalid-feedback">
+                Please enter a valid description!
+            </div>
+            <div class="valid-feedback">
+                Description looks good!
+             </div>
         </div>
+       
+
         <div class="mb-3">
-        <label for="image" class="form-label">image</label>
-            <input rows="3" cols="20" type="text" name="listing[image]" placeholder="select image URL" class="form-control">
+            <label for="image" class="form-label">Upload Image</label>
+            <input rows="3" cols="20" type="file" name="listing[image]" placeholder="select image " class="form-control" required>
+            <div class="valid-feedback">
+                Image looks good!
+             </div>
         </div>
+
         <div class="row">
             <div class="mb-3 col-md-4">
                 <label for="price" class="form-label">Price</label>
-                <input type="number" name="listing[price]" placeholder="1299" class="form-control" >
+                <input type="number" name="listing[price]" placeholder="1299" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please enter valid price!
+                </div>
+                <div class="valid-feedback">
+                    Price looks good!
+                 </div>
             </div>
             <div class="mb-3 col-md-8">
-                <label for="location" class="form-label">Location</label>
-                <input type="text" name="listing[location]" placeholder="enter location" class="form-control">
-    
+                <label for="location" class="form-label" >Location</label>
+                <input type="text" name="listing[location]" placeholder="enter location" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please enter valid lacation!
+                </div>
+                <div class="valid-feedback">
+                    Location looks good!
+                 </div>
             </div>
            
            <div class="mb-3">
             <label for="country" class="col-form-label">Country</label>
-            <input type="text" name="listing[country]" placeholder="India" class="form-control">
+            <input type="text" name="listing[country]" placeholder="India" class="form-control" required>
+            <div class="invalid-feedback">
+                Please enter valid country!
+            </div>
+            <div class="valid-feedback">
+                Country looks good!
+             </div>
            </div>
 
         </div>
        <br>
         
-        <button class="btn btn-danger">Add</button>
+        <button class="btn btn-success new-listing-btn">Add</button>
         <br><br>
     </form>
 </div>
 </div>
-    
-</body>
+
+
+
